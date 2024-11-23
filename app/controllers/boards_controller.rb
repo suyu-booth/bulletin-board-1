@@ -14,6 +14,8 @@ class BoardsController < ApplicationController
 
     @the_board = matching_boards.at(0)
 
+    @today_date = Date.today
+
     render({ :template => "posts/index" })
   end
 
