@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   def index
-    matching_posts = Post.all
+    board_id = params.fetch("path_id")
+    @the_board = Board.all.where(
+      :id => board_id
+    ).at(0)
 
-    @list_of_posts = matching_posts.order({ :created_at => :desc })
+    # @list_of_posts = matching_posts.order({ :created_at => :desc })
 
     render({ :template => "posts/index" })
   end

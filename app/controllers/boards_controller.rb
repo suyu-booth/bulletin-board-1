@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
 
     @the_board = matching_boards.at(0)
 
-    render({ :template => "boards/show" })
+    render({ :template => "posts/index" })
   end
 
   def create
